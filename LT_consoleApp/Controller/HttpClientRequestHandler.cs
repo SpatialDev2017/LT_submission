@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Net;
-using System.IO;
-using System;
-using System.Net.Http;
+
 
 namespace LT_consoleApp.Controller
 {
@@ -15,7 +12,7 @@ namespace LT_consoleApp.Controller
            
             using (var httpClient = new HttpClient())
             {
-                // httpClient.BaseAddress = new Uri(url + id);
+                
                 UriBuilder uri = new UriBuilder(url);
                 string queryString = "albumId=" + id;
                 if (uri.Query != null && uri.Query.Length > 1)

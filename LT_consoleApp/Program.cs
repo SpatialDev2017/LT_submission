@@ -2,9 +2,7 @@
 using LT_consoleApp.Model;
 using Newtonsoft.Json;
 using System;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
+
 
 
 namespace LT_consoleApp
@@ -39,7 +37,6 @@ namespace LT_consoleApp
         {
             
             Console.Write("Enter the id for the album you would like to query. \nAlbum Id:");
-            
             string photoId = Console.ReadLine();
             return rh.GetAlbumsById(Constants.BaseUrl, photoId);
         }
