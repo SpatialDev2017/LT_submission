@@ -34,11 +34,11 @@ namespace UnitTest_proj
 
             var consoleResponse = Console.Out;
 
-            HttpClientRequestHandler cu = new HttpClientRequestHandler();
+            HttpClientRequestHandler albums = new HttpClientRequestHandler();
 
             using (var UnitTest_proj = new userInputTest())
             {
-                input = cu.GetAlbumsById(url, input);
+                input = albums.GetAlbumsById(url, input);
                 Assert.AreEqual(actual, UnitTest_proj.GetOuput());
             }
 
@@ -49,17 +49,17 @@ namespace UnitTest_proj
         [Fact]
         public void Test2()
         {
-            //if user input is not within the range of album ids
+            //negative test:  if user input is not within the range of album ids
             string input = "200";
             string actual = "The album id input range is 1-100";
 
             var consoleResponse = Console.Out;
 
-            HttpClientRequestHandler album = new HttpClientRequestHandler();
+            HttpClientRequestHandler albums = new HttpClientRequestHandler();
 
             using (var UnitTest_proj = new userInputTest())
             {
-                input = album.GetAlbumsById(url,input);
+                input = albums.GetAlbumsById(url,input);
 
                 Assert.AreEqual(actual, UnitTest_proj.GetOuput());
             }
@@ -69,17 +69,17 @@ namespace UnitTest_proj
         [Fact]
         public void Test3()
         {
-            //if user input is empty string
+            //negative test:  if user input is empty string
             string input = "";
             string actual = "The album id input range is 1-100";
 
             var consoleResponse = Console.Out;
 
-            HttpClientRequestHandler album = new HttpClientRequestHandler();
+            HttpClientRequestHandler albums = new HttpClientRequestHandler();
 
             using (var UnitTest_proj = new userInputTest())
             {
-                input = album.GetAlbumsById(url, input);
+                input = albums.GetAlbumsById(url, input);
 
                 Assert.AreEqual(actual, UnitTest_proj.GetOuput());
             }
@@ -95,11 +95,11 @@ namespace UnitTest_proj
 
             var consoleResponse = Console.Out;
 
-            HttpClientRequestHandler album = new HttpClientRequestHandler();
+            HttpClientRequestHandler albums = new HttpClientRequestHandler();
 
             using (var UnitTest_proj = new userInputTest())
             {
-                input = album.GetAlbumsById(url, input);
+                input = albums.GetAlbumsById(url, input);
 
                 Assert.AreEqual(actual, UnitTest_proj.GetOuput());
             }
@@ -109,7 +109,7 @@ namespace UnitTest_proj
         [Fact]
         public void Test6()
         {
-            //if user input is null
+            //negative test: if user input is null
             string input = null;
             string actual = "The album id input range is 1-100";
 
