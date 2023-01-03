@@ -24,7 +24,7 @@ namespace LT_consoleApp.Controller
                     uri.Query = queryString;
                 }
 
-               // Console.WriteLine(uri.ToString());
+               
                 var response = httpClient.GetStringAsync(new Uri(uri.ToString())).Result;
                 return response;
             }

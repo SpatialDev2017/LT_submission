@@ -5,8 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace LT_consoleApp.Model
 {
-    internal class Repository
+    public class Repository
     {
+       
         [JsonProperty(PropertyName = "albumId")]
         public int albumId { get; set; }
 

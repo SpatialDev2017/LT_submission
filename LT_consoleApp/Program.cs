@@ -2,6 +2,7 @@
 using LT_consoleApp.Model;
 using Newtonsoft.Json;
 using System;
+using System.Text.RegularExpressions;
 
 
 
@@ -9,8 +10,6 @@ namespace LT_consoleApp
 {
      class Program
     {
-       
-        IRequestHandler requestHandler = new HttpClientRequestHandler();
         static void Main(string[] args)
         {
 
@@ -33,12 +32,21 @@ namespace LT_consoleApp
 
         }
 
-        public static string GetPhotos(IRequestHandler rh)
+        public static string? GetPhotos(IRequestHandler rh)
         {
             
             Console.Write("Enter the id for the album you would like to query. \nAlbum Id:");
+            string pattern = "[0-9]";
+            Regex rg = new Regex(pattern);
             string photoId = Console.ReadLine();
-            return rh.GetAlbumsById(Constants.BaseUrl, photoId);
+            if (photoId == null)
+                return null;
+            else if (rg.IsMatch(photoId))
+                return rh.GetAlbumsById(Constants.BaseUrl, photoId); 
+            else
+                throw new ArgumentNullException("Please enter a valid id");
+           
+            
         }
 
 
